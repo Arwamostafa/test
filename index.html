@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel = "icon" href =  "image/logo.png"type = "image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+  
+    <title>yummy</title>
+</head>
+<body >
+    <div class="loading">
+        <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+
+<div class="sideBar ">
+    <div class="sideBar-Inner d-flex flex-column justify-content-between  ">
+        <div >
+            <ul class="linkss">
+                <li onclick="displaySaerch()" class="linkli">search</li>
+                <li onclick="category()" class="linkli">Categories</li>
+                <li onclick="area()" class="linkli"> Area</li>
+                <li onclick="ingredient()" class="linkli">Ingredients </li>
+                <li  onclick="contactUs()"class="linkli">Contact Us</li>
+                 
+                
+            </ul>
+            
+        </div>
+        <div class="SecondSection">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+            
+            <p>Copyright Â© 2019 All Rights
+                Reserved.</p>
+
+        </div>
+
+    </div>
+    <div class="openClose d-flex justify-content-between align-items-center flex-column   ">
+        <img class="mt-4 w-75 " src="image/logo.png" alt="">
+
+        <div id="openIcone">
+            <span class="openContainer"> <i id="openi" class="fa-solid fa-bars fs-2 opennnn" ></i></span>
+        </div>
+
+        <div class="icons mb-4 d-flex flex-column">
+            <a href="" ><i class="fa-solid fa-globe my-1"></i></a>
+            <a href=""> <i class="fa-solid fa-share-nodes my-1"></i></a>
+        </div>
+
+    </div>
+
+</div>
+<div class="contentstart ">
+    <div class="container my-5 m-auto">
+      <div class="row " id="dataRowstart">
+         
+      </div>
+    </div>
+</div>
+    <div class="content ">
+          <div class="container my-5 m-auto">
+            <div class="row " id="dataRow">
+               
+            </div>
+          </div>
+    </div>
+<!-- contact Us  -->
+
+    <div class="contact d-none" id="contacttt">
+        <div class="container w-75">
+         <div class="row " id="contact">
+
+             <div class="col-md-6 my-3">
+                <input type="text" class="form-control " placeholder="Enter Your Name " id="name" >
+                <div class="alert alert-danger d-none " id="nameAlert" >  Dont Enter Special Charater And Numbers </div>
+            </div>
+            
+
+             <div class="col-md-6 my-3">
+                <input type="text" class="form-control "placeholder="Enter Your Email" id="email" >
+                <div class="alert alert-danger    d-none" id="emailalert" >Please Enter One letter</div>
+            </div>
+             
+         
+             <div class="col-md-6 my-3">
+                <input type="text" class="form-control "placeholder="Enter Your Phone" id="phone" > 
+                <div class="alert alert-danger    d-none" id="phoneAlert" >Please Enter One letter</div>
+            </div>
+            
+            
+             <div class="col-md-6 my-3">
+                <input type="number" class="form-control "placeholder="Enter Your Age"  >
+            </div>
+             <div class="col-md-6 my-3">
+                <input type="password" class="form-control "placeholder="Enter Your Password" id="pass" >
+                <div class="alert alert-danger    d-none" id="passAlert" >Please Enter One letter</div>
+            </div>
+            
+             <div class="col-md-6 my-3">
+                <input type="password" class="form-control "placeholder="Repassword" id="repass"  >
+                <div class="alert alert-danger    d-none" id="repassAlert" >Please Enter One letter</div>
+            </div> 
+             <div class="col-md-12 my-3 text-center">
+                <button class="btn btn-outline-danger " id="sumbitBtn"  >Submit</button>
+            </div>
+            
+         </div>
+        
+         
+        </div>
+
+     </div>
+<!-- search  -->
+
+     <div class="saerch d-none" id="searchhh">
+        <div class="container">
+         <div class="row my-5" id="searchInpute">
+
+             <div class="col-md-6"><input type="text" class="form-control " placeholder="Search By Name" value="" id="searchByName"></div>
+             
+             <div class="col-md-6">
+                <input type="text" class="form-control "  placeholder="Search By First Letter" value="" maxlength="1" id="searchByFirst">
+                
+         </div>
+         
+         <div class="row" id="saerchCorner">
+           
+         </div>
+        </div>
+     </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="fontawesome-free-6.4.2-web/js/all.min.js"></script>
+     <script src="js/main.js"></script>
+    
+  
+</body>
+</html>
