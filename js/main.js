@@ -41,7 +41,7 @@ $(document).ready(function () {
 $(document).ready(function (){
    
     async function meal(){
-        contain.innerHTML=" "
+        
          start.innerHTML=" "
      $(".loading").fadeIn(300)
     var myHttp= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
@@ -58,6 +58,7 @@ function display (){
      
     var  temp = ' '
     for (let i = 0; i < rep.length; i++) {
+        
        temp+= `<div class="col-md-3" onclick="mealinfo(${rep[i].idMeal})">
        <div class="con ">
            <img src="${rep[i].strMealThumb}" alt="" class="w-100">
@@ -67,10 +68,11 @@ function display (){
        </div>
        
    </div>`
-        
+   
     }
-    dataRowstart.innerHTML= temp
-   contain.innerHTML="  "
+    contain.innerHTML=" "
+    dataRowstart.innerHTML= temp  
+   
 }
 
 })
@@ -137,10 +139,10 @@ function displayCategory (arr){
        </div>
        </div>
    </div>`
-        
+   
     }
     contain.innerHTML=corner
-   
+    
   
 }
 
@@ -214,7 +216,7 @@ function displayarea (){
     
     }
     contain.innerHTML=areacorner
-    
+   
 }
 async function areaMeal(AreaaMeal){
     contain.innerHTML=" "
@@ -228,7 +230,7 @@ async function areaMeal(AreaaMeal){
     let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
-             $(".opennnn").addClass( "fa-bars")
+    $(".opennnn").addClass( "fa-bars")
 }
 
 function displayAreaMeal(){
@@ -265,7 +267,7 @@ async function ingredient(){
       let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
-             $(".opennnn").addClass( "fa-bars")
+     $(".opennnn").addClass( "fa-bars")
 }
 ingredient()
 
@@ -279,9 +281,11 @@ function displayingredient(){
        </div>`
         
     }
+    
     contain.innerHTML=ingcorner
     
 }
+
 async function ingredientMeal(ingaMeal){
     contain.innerHTML=" "
     
