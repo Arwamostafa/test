@@ -70,8 +70,9 @@ function display (){
    </div>`
    
     }
-    contain.innerHTML=" "
-    dataRowstart.innerHTML= temp  
+    contain.innerHTML=temp
+    // contain.innerHTML=" "
+    // dataRowstart.innerHTML= temp  
    
 }
 
@@ -256,11 +257,12 @@ function displayAreaMeal(){
 async function ingredient(){
     contain.innerHTML=" "
     start.innerHTML ="  "
+    $(".loading").fadeIn(300)
     contectt.classList.remove('d-flex')
     contectt.classList.add('d-none')
     search.classList.remove('d-flex')
     search.classList.add('d-none')
-    $(".loading").fadeIn(300)
+    
    
     var myHttpin= await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
       var inRsponse = await myHttpin.json()
@@ -329,7 +331,8 @@ function displayingMeal(){
 async function mealinfo(mealDetails){
     contain.innerHTML=" "
     start.innerHTML =" "
-    
+    search.classList.remove('d-flex')
+    search.classList.add('d-none')
     $(".loading").fadeIn(300)
     
     let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
@@ -392,6 +395,7 @@ function displaySaerch(){
     start.innerHTML =" "
     contectt.classList.remove('d-flex')
     contectt.classList.add('d-none')
+
     $(".loading").fadeIn(300)
     $(".loading") .fadeOut(300)
     search.classList.remove('d-none')
@@ -403,8 +407,8 @@ function displaySaerch(){
 }
 // search name
 async function searchNameCorner(searchMeal){
-    
-   
+    contain.innerHTML=" "
+    start.innerHTML=" "
     var myHttpMealSearch= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchMeal}`)
     var mealSearchRsponse = await myHttpMealSearch.json()
     searcharr=mealSearchRsponse.meals
@@ -433,7 +437,8 @@ inputSearch.addEventListener("input", function(){
 // search first letter 
 
 async function searchletterCorner(searchLetterMeal){
-    
+    start.innerHTML=" "
+    contain.innerHTML=" "
     var myHttpLetterSearch= await fetch(`https://themealdb.com/api/json/v1/1/search.php?f=${searchLetterMeal}`)
     var mealSearchLetterRsponse = await myHttpLetterSearch.json()
     searLettercharr=mealSearchLetterRsponse.meals
