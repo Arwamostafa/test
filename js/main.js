@@ -112,6 +112,7 @@ async function category(){
     search.classList.add('d-none')
     contain.innerHTML=" "
     start.innerHTML =" "
+    $(".loading").fadeIn(300)
     
     var myHttpcategory= await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
       var categoryRsponse = await myHttpcategory.json()
@@ -122,10 +123,10 @@ async function category(){
         $(".sideBar ").animate({left:-sideBarInnerWidth},600)
         $(".opennnn").removeClass( "fa-x")
         $(".opennnn").addClass( "fa-bars")
-         
+         $(".loading") .fadeOut(300)
 } 
 
-category()
+
 
 function displayCategory (arr){
     var  corner = ' ' 
@@ -150,7 +151,6 @@ async function categorymeals(meal){
     contain.innerHTML=" "
     start.innerHTML =" "
     $(".loading").fadeIn(300)
-    $(".loading") .fadeOut(300)
     var myHttpcategorymeal= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${meal}`)
       var categorymaelRsponse = await myHttpcategorymeal.json()
       categoryMealArr=categorymaelRsponse.meals
@@ -160,6 +160,7 @@ async function categorymeals(meal){
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
       $(".opennnn").addClass( "fa-bars")
+      $(".loading") .fadeOut(300)
 }
 
 function displaycatecoryMeal(){
@@ -185,6 +186,7 @@ async function area(){
     
     contain.innerHTML=" "
     start.innerHTML =" "
+    $(".loading").fadeIn(300)
     
     contectt.classList.remove('d-flex')
     contectt.classList.add('d-none')
@@ -200,11 +202,9 @@ async function area(){
       let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
-             $(".opennnn").addClass( "fa-bars")
+    $(".opennnn").addClass( "fa-bars")
+    $(".loading") .fadeOut(300)
 }
-
-
-area()
 
 function displayarea (){
     var  areacorner = ''
@@ -222,7 +222,7 @@ async function areaMeal(AreaaMeal){
     contain.innerHTML=" "
     start.innerHTML =" "
     $(".loading").fadeIn(300)
-    $(".loading") .fadeOut(300)
+   
     var myHttpareaMealL= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${AreaaMeal}`)
     var areaRsponse = await myHttpareaMealL.json()
     areaMael=areaRsponse.meals
@@ -231,6 +231,7 @@ async function areaMeal(AreaaMeal){
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
     $(".opennnn").addClass( "fa-bars")
+     $(".loading") .fadeOut(300)
 }
 
 function displayAreaMeal(){
@@ -259,6 +260,8 @@ async function ingredient(){
     contectt.classList.add('d-none')
     search.classList.remove('d-flex')
     search.classList.add('d-none')
+    $(".loading").fadeIn(300)
+   
     var myHttpin= await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`)
       var inRsponse = await myHttpin.json()
       inaarr=inRsponse.meals
@@ -268,8 +271,9 @@ async function ingredient(){
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
      $(".opennnn").addClass( "fa-bars")
+      $(".loading") .fadeOut(300)
 }
-ingredient()
+
 
 function displayingredient(){
     var  ingcorner = ''
@@ -288,9 +292,9 @@ function displayingredient(){
 
 async function ingredientMeal(ingaMeal){
     contain.innerHTML=" "
-    
+    start.innerHTML =" "
     $(".loading").fadeIn(300)
-    $(".loading") .fadeOut(300)
+    
     let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
@@ -299,7 +303,7 @@ async function ingredientMeal(ingaMeal){
     var ingRsponse = await myHttpIngMealL.json()
     ingMael=ingRsponse.meals
     displayingMeal()
-    
+    $(".loading") .fadeOut(300)
       
 }
 
@@ -327,7 +331,7 @@ async function mealinfo(mealDetails){
     start.innerHTML =" "
     
     $(".loading").fadeIn(300)
-    $(".loading") .fadeOut(300)
+    
     let sideBarInnerWidth = $(".sideBar-Inner").innerWidth();
     $(".sideBar ").animate({left:-sideBarInnerWidth},600)
     $(".opennnn").removeClass( "fa-x")
@@ -336,6 +340,7 @@ async function mealinfo(mealDetails){
     var mealInfoRsponse = await myHttpMealInfo.json()
     details = mealInfoRsponse.meals[0]
     mealInfoDisplay()
+    $(".loading") .fadeOut(300)
 }
 function mealInfoDisplay(){
     let recipes = ``
@@ -561,7 +566,7 @@ function emailValidation(){
      }
 function phoneValidation(){
     
-    var phonevalidation=/^[0-9]+$/;
+    var phonevalidation=/^[01][0-9]{1,11}$/;
         if(phonevalidation.test(phone.value)==true){
             return true
         }
